@@ -1,0 +1,8 @@
+﻿.section {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.back {
+    display: block;
+}

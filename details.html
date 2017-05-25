@@ -1,0 +1,20 @@
+﻿<link rel="stylesheet" href="styles/details.css" />
+<button class="back" ng-click="back()">Povratak</button>
+<div class="section">
+    <h3 class="row-title">
+        IME I PREZIME
+    </h3>
+        {{student.name}}
+</div>
+<div class="section">
+    <h3 class="row-title">
+        SPOL
+    </h3>
+        {{student.gender}}
+</div>
+<div class="section">
+    <h3 class="row-title">
+        DATUM UNOSA
+    </h3>
+        {{student.dateOfAddition | date: "medium"}}
+</div>
