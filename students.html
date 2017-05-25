@@ -1,22 +1,11 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Angular HW 2</title>
-    <script src="scripts/vendor/angular.js"></script>
-    <script src="scripts/vendor/angular-local-storage.js"></script>
-    <script src="scripts/vendor/lodash.js"></script>
-    <script src="scripts/vendor/angular-ui-router.js"></script>
-    <script src="scripts/app/app.js"></script>
-</head>
-<body ng-app="App">
-<div ng-controller="StudentController">
-    <div ng-repeat="student in students">
-        {{student.name}}
-        <button ng-click="goToStudentDetails(student.name)">Detalji</button>
-        <button ng-click="deleteStudent(student.name)">Obriši studenta</button>
-    </div>
+﻿<h1>
+    SVI STUDENTI:
+</h1>
+<div ng-repeat="student in students">
+    {{student.name}}
+    <button ng-click="goToStudentDetails(student.name)">Detalji</button>
+    <button ng-click="deleteStudent(student.name)">Obriši studenta</button>
 </div>
 
-</body>
-</html>
+
+
