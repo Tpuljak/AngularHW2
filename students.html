@@ -2,6 +2,7 @@
 <h1>
     SVI STUDENTI:
 </h1>
+<button class="add" ng-click="addStudent()">Dodaj novog učenika</button>
 <div ng-repeat="student in students">
     {{student.name}}
     <button ng-click="goToStudentDetails(student.name)">Detalji</button>

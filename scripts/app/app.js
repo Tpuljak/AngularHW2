@@ -38,10 +38,15 @@ app.config(function($stateProvider, $locationProvider) {
         })
         .state("details", {
             url: "/details",
-            params: {selectedStudentName: null},
+            params: { selectedStudentName: null },
             controller: "DetailsController",
             templateUrl: "details.html"
         })
+        .state("addStudent", {
+            url: "addStudent",
+            controller: "AddStudentController",
+            templateUrl: "studentAdd.html"
+        });
 });
 
 app.controller("HomeController", function($scope, $state) {
@@ -59,6 +64,9 @@ app.controller("StudentController", function($scope, $state, localStorageService
         _.remove($scope.students, function (o) { return o.name == studentName });
         localStorageService.set("students", angular.toJson($scope.students));
     }
+    $scope.addStudent = function () {
+        $state.go("addStudent");
+    }
 });
 
 app.controller("DetailsController", function ($scope, $state, localStorageService, $stateParams) {
@@ -67,3 +75,30 @@ app.controller("DetailsController", function ($scope, $state, localStorageServic
         $state.go("students");
     }
 });
+
+app.controller("AddStudentController", function ($scope, $state, localStorageService) {
+    $scope.students = angular.fromJson(localStorageService.get("students"));
+    $scope.confirm = function () {
+        if (!$scope.name) {
+            alert("Name is required!");
+            return;
+        }
+        if (!$scope.gender) {
+            alert("Gender is required!");
+            return;
+        }
+        var student = {
+            name: $scope.name,
+            gender: $scope.gender,
+            dateOfAddition: new Date(Math.random() * new Date())
+        }
+        $scope.students.push(student);
+        localStorageService.set("students", angular.toJson($scope.students));
+        $scope.name = "";
+        $scope.gender = null;
+    }
+    $scope.back = function () {
+        $state.go("students");
+    }
+});
+

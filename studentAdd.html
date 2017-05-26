@@ -1,0 +1,20 @@
+﻿<link rel="stylesheet" href="styles/studentAdd.css" />
+<button class="back" ng-click="back()">Povratak</button>
+<div class="phonebook">
+    <div class="section">
+        <h3 class="row-title">
+            IME I PREZIME
+        </h3>
+        <input class="input" ng-model="name" type="text" />
+    </div>
+    <div class="section">
+        <h3 class="row-title">
+            SPOL
+        </h3>
+        <input type="radio" name="radioButton" ng-model="gender" value="M" />M<br />
+        <input type="radio" name="radioButton" ng-model="gender" value="Ž" />Ž</>
+    </div>
+    <div class="section">
+        <button ng-click="confirm()" class="confirm-button">Potvrdi unos</button>
+    </div>
+</div>

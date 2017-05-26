@@ -1,0 +1,18 @@
+﻿.back {
+    display: block;
+    margin: 5px 0px 10px 10px;
+}
+
+.section {
+    display: inline-block;
+    float: left;
+    margin-right: 20px;
+}
+
+.confirm-button {
+    margin-top: 70px;
+}
+
+.input {
+    margin-top: 10px;
+}
